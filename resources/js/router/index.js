@@ -13,14 +13,14 @@ Vue.use(Router);
 import Layout from '@/layout';
 
 /* Router for modules */
-import elementUiRoutes from './modules/element-ui';
-import componentRoutes from './modules/components';
-import chartsRoutes from './modules/charts';
-import tableRoutes from './modules/table';
+// import elementUiRoutes from './modules/element-ui';
+// import componentRoutes from './modules/components';
+// import chartsRoutes from './modules/charts';
+// import tableRoutes from './modules/table';
 import adminRoutes from './modules/admin';
-import nestedRoutes from './modules/nested';
-import errorRoutes from './modules/error';
-import excelRoutes from './modules/excel';
+// import nestedRoutes from './modules/nested';
+// import errorRoutes from './modules/error';
+// import excelRoutes from './modules/excel';
 import permissionRoutes from './modules/permission';
 
 /**
@@ -79,7 +79,8 @@ export const constantRoutes = [
     component: () => import('@/views/error-page/401'),
     hidden: true,
   },
-  {
+  adminRoutes,
+  /* {
     path: '',
     component: Layout,
     redirect: 'dashboard',
@@ -91,8 +92,8 @@ export const constantRoutes = [
         meta: { title: 'dashboard', icon: 'dashboard', noCache: false },
       },
     ],
-  },
-  {
+  }, */
+  /* {
     path: '/documentation',
     component: Layout,
     redirect: '/documentation/index',
@@ -131,10 +132,13 @@ export const constantRoutes = [
       },
     ],
   },
-  elementUiRoutes,
+  elementUiRoutes, */
 ];
 
 export const asyncRoutes = [
+  permissionRoutes,
+];
+/* export const asyncRoutes = [
   permissionRoutes,
   componentRoutes,
   chartsRoutes,
@@ -228,7 +232,7 @@ export const asyncRoutes = [
     ],
   },
   { path: '*', redirect: '/404', hidden: true },
-];
+]; */
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
